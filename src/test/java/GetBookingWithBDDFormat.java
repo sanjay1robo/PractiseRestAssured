@@ -10,7 +10,7 @@ public class GetBookingWithBDDFormat {
                             .log().all()
                             .baseUri("https://restful-booker.herokuapp.com")
                             .basePath("booking/{id}")
-                            .pathParam("id","1256")
+                            .pathParam("id",1255)
                         .when()
                             .get()
                         .then()
