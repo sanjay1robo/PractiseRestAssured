@@ -10,7 +10,7 @@ public class UpdateBookingPatch {
 
         HashMap<String, Object> hmap = new HashMap<String, Object>();
         hmap.put("booking","booking");
-        hmap.put("id", 1255);
+        hmap.put("id", 1251);
 
             RestAssured.given()
                             .log().all()
