@@ -1,4 +1,6 @@
+import com.fasterxml.jackson.databind.util.JSONPObject;
 import io.restassured.RestAssured;
+import org.json.JSONObject;
 
 // NOTE : The usage of path parameter in this case
 
@@ -6,7 +8,9 @@ public class GetBookingWithBDDFormat {
 
     public static void main (String args[])
     {
-            RestAssured.given()
+
+//        JSONObject jsonObject = new JSONObject();
+            String responseString = RestAssured.given()
                             .log().all()
                             .baseUri("https://restful-booker.herokuapp.com")
                             .basePath("booking/{id}")
@@ -15,7 +19,12 @@ public class GetBookingWithBDDFormat {
                             .get()
                         .then()
                             .log().all()
-                            .statusCode(200);
+                            .statusCode(200).extract().asString();
+
+
+//            JSONObject jsonObject = new JSONObject(responseString);
+//
+//        System.out.println(jsonObject.getJSONArray());
 
 
     }
